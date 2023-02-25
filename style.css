@@ -1,0 +1,62 @@
+html {
+  background-color: #111;
+}
+
+body {
+  margin: 0;
+  color: #eee;
+  display: flex;
+  font-family: Arial, Roboto, '華康香港標準楷書', 'Noto Sans CJK HK', sans-serif;
+  line-height: 1.6;
+}
+
+.left {
+  flex-grow: 1;
+}
+
+.right {
+  max-width: 350px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.right > * {
+  display: block;
+}
+
+.right p {
+  margin: 0.5em 0;
+}
+
+#image-display {
+  position: relative;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+#image-display img {
+  max-height: calc(100vh - 8px);
+  filter: invert(1) brightness(0.8);
+}
+
+#covering-canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.pure-form input[type='text'],
+.pure-form input[type='number'],
+textarea,
+.pure-form input[type='button'],
+.pure-button {
+  padding: 0.2em 0.4em;
+  color: inherit;
+  background-color: inherit;
+}
+
+.pure-button {
+  border: 1px solid white;
+}

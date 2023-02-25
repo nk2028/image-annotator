@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="image annotator, annotate images, web application">
+  <meta name="description" content="Annotating images in your browser!">
+  <title>Image Annotator</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="left">
+    <div id="image-display">
+      <canvas id="covering-canvas"></canvas>
+      <img id="displayed-image" alt="Image to be annotated" src="" />
+    </div>
+  </div>
+
+  <form id="form" class="right pure-form">
+    <div class="right-upper" id="data-display">
+      <p><label>字頭 <input name="字頭" type="text" minlength="1" maxlength="2" size="1" required></label></p>
+      <p><label>韻圖開合(修正後) <input name="韻圖開合" type="text" minlength="1" maxlength="1" size="1"></label></p>
+      <p><label>韻圖母位置 <input name="韻圖母位置" type="text" minlength="5" maxlength="6" size="9" required></label></p>
+      <p><label>韻圖聲 <input name="韻圖聲" type="text" minlength="1" maxlength="1" size="1" required></label></p>
+      <p><label>韻圖韻 <input name="韻圖韻" type="text" minlength="1" maxlength="1" size="1" required></label></p>
+      <p><label>韻圖等 <input name="韻圖等" type="text" minlength="1" maxlength="1" size="1" required></label></p>
+      <p><label>是否無效 <input name="是否無效" type="number" min="0" max="1" required></label></p>
+      <p><label>imageIndex <input name="imageIndex" type="number" min="0" max="100" required></label></p>
+      <p><label>coord-x <input name="x" type="text" size="8" readonly></label></p>
+      <p><label>coord-y <input name="y" type="text" size="8" readonly></label></p>
+      <p><span>備註</span></p>
+      <p><textarea name="備註"></textarea></p>
+    </div>
+
+    <div class="right-lower navigation">
+      <p>
+        <span>圖像：</span>
+        <button id="image-prev">◂</button>
+        <span id="image-index"></span>
+        <button id="image-next">▸</button>
+      </p>
+
+      <p>
+        <span>資料：</span>
+        <button id="data-prev">◂</button>
+        <span id="data-index"></span>
+        <button id="data-next">▸</button>
+      </p>
+
+      <p>
+        <input id="file-button" type="button" class="pure-button" value="匯入檔案">
+        <input type="file" id="file-input" style="display: none;">
+        <input id="export-button" type="button" class="pure-button" value="匯出檔案">
+      </p>
+
+      <p>
+        <input id="clear-page-button" type="button" class="pure-button" value="清除本頁">
+        <input id="save-cache-button" type="button" class="pure-button" value="存入快取">
+        <input id="clear-cache-button" type="button" class="pure-button" value="清除快取">
+      </p>
+    </div>
+  </form>
+</body>
+</html>
